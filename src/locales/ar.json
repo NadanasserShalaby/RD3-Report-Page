@@ -1,4 +1,11 @@
 {
-  
-
+  "home": {
+    "title": "تأكيد طلب الزيارة",
+    "subtitle": "طلب زيارة لتفعيل وثيقة التأمين ضد العيوب الخفية لمشروع رقم",
+    "nameLabel": "الاسم",
+    "namePlaceholder": "اكتب الاسم بالكامل",
+    "phoneLabel": "رقم الهاتف",
+    "phonePlaceholder": "01xxxxxxxxx",
+    "submit": "تأكيد الطلب"
+  }
 }

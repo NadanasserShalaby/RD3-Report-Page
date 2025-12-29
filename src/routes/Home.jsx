@@ -1,4 +1,6 @@
+import { useTranslation } from "react-i18next";
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <section className="container mt-10 mx-auto px-4">
       <div className="flex justify-center">
@@ -6,11 +8,10 @@ export default function Home() {
 
           <div className="mb-8 text-center space-y-2">
             <h2 className="text-xl font-semibold text-gray-800">
-              تأكيد طلب الزيارة
+              {t("home.title")}
             </h2>
             <p className="text-sm text-gray-500 leading-relaxed">
-              Visit Request for Activating The Insurance Policy Against Hidden
-              Defects for Project Number
+              {t("home.subtitle")}
             </p>
           </div>
 
@@ -18,11 +19,11 @@ export default function Home() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                الاسم
+                {t("home.nameLabel")}
               </label>
               <input
                 type="text"
-                placeholder="اكتب الاسم بالكامل"
+                placeholder={t("home.namePlaceholder")}
                 className="w-full rounded-md border border-gray-300 px-4 py-2.5
                   focus:outline-none focus:ring-1 focus:ring-gray-400"
               />
@@ -30,11 +31,11 @@ export default function Home() {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                رقم الهاتف
+                {t("home.phoneLabel")}
               </label>
               <input
                 type="text"
-                placeholder="01xxxxxxxxx"
+                placeholder={t("home.phonePlaceholder")}
                 className="w-full rounded-md border border-gray-300 px-4 py-2.5
                   focus:outline-none focus:ring-1 focus:ring-gray-400"
               />
@@ -45,7 +46,7 @@ export default function Home() {
               className="w-full py-3 mt-2 rounded-md text-white font-medium
                 bg-[#6c757d] hover:bg-[#5a6268] transition"
             >
-              تأكيد الطلب
+              {t("home.submit")}
             </button>
 
           </div>
