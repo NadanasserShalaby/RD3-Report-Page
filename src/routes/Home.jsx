@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
@@ -11,6 +12,7 @@ export default function Home() {
   const [searchParams] = useSearchParams();
   const auth = searchParams.get("Tr");
   const navigate = useNavigate();
+  const [showConfirm, setShowConfirm] = useState(false); 
   const {
     register,
     handleSubmit,
@@ -22,9 +24,17 @@ export default function Home() {
   });
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
+    setShowConfirm(true);
+  };
+
+  const handleConfirm = () => {
+    setShowConfirm(false);
     reset();
-    navigate("/otp");
+    navigate(`/otp?Tr=${auth}`);
+  };
+
+  const handleCancel = () => {
+    setShowConfirm(false);
   };
   if (!auth) {
     return <Error />;
@@ -80,9 +90,31 @@ export default function Home() {
               {t("home.submit")}
             </button>
           </form>
-
         </div>
       </div>
+
+      {showConfirm && (
+        <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl p-6 max-w-md w-full shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">{t("home.confirmTitle")}</h3>
+            <p className="text-gray-600 mb-6">{t("home.confirmMessage")}</p>
+            <div className="flex justify-end gap-4">
+              <button
+                onClick={handleCancel}
+                className="px-4 py-2 rounded-md border border-gray-300"
+              >
+                {t("home.cancel")}
+              </button>
+              <button
+                onClick={handleConfirm}
+                className="px-4 py-2 rounded-md bg-[#5a6268] text-white hover:bg-[#6c757d]"
+              >
+                {t("home.confirm")}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

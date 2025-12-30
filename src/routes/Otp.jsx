@@ -2,18 +2,23 @@ import { Lock } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import OTPInput from "react-otp-input";
-import { useNavigate } from "react-router";
-import { toast } from "sonner";
+import { useNavigate, useSearchParams } from "react-router";
+import Error from "./Error";
 
 export default function OtpPage() {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
+  const [searchParams] = useSearchParams();
+  const auth = searchParams.get("Tr");
+  const navigate = useNavigate();
   const [otp, setOtp] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/success");
+    navigate(`/success?Tr=${auth}`);
   };
+   if (!auth) {
+      return <Error />;
+    }
   return (
     <div className="flex items-center justify-center bg-gray-100 px-4 ">
       <div className="bg-white shadow-lg rounded-xl max-w-3xl w-full">

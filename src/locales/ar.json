@@ -2,11 +2,15 @@
   "home": {
     "title": "تأكيد طلب الزيارة",
     "subtitle": "طلب زيارة لتفعيل وثيقة التأمين ضد العيوب الخفية لمشروع رقم",
-    "nameLabel": "الاسم",
-    "namePlaceholder": "اكتب الاسم بالكامل",
+    "nameLabel": "الاسم الكامل",
+    "namePlaceholder": "أدخل اسمك الكامل",
     "phoneLabel": "رقم الهاتف",
-    "phonePlaceholder": "ادخل رقم الهاتف ",
-    "submit": "تأكيد الطلب"
+    "phonePlaceholder": "أدخل رقم هاتفك",
+    "submit": "إرسال",
+    "confirmTitle": "تأكيد الزيارة",
+    "confirmMessage": "سنرسل لك رمز التحقق OTP لتأكيد زيارتك.",
+    "confirm": "تأكيد",
+    "cancel": "إلغاء"
   },
   "validation": {
     "nameRequired": "الاسم مطلوب",

@@ -2,11 +2,15 @@
   "home": {
     "title": "Visit Request Confirmation",
     "subtitle": "Visit Request for Activating The Insurance Policy Against Hidden Defects for Project Number",
-    "nameLabel": "Full Name",
-    "namePlaceholder": "Enter your full name",
-    "phoneLabel": "Phone Number",
-    "phonePlaceholder": "Enter your Phone Number",
-    "submit": "Confirm Request"
+  "nameLabel": "Full Name",
+  "namePlaceholder": "Enter your full name",
+  "phoneLabel": "Phone Number",
+  "phonePlaceholder": "Enter your phone number",
+  "submit": "Submit",
+  "confirmTitle": "Confirm Your Visit",
+  "confirmMessage": "We will send an OTP to your phone to confirm your visit.",
+  "confirm": "Confirm",
+  "cancel": "Cancel"
   },
   "validation": {
     "nameRequired": "Name is required",
