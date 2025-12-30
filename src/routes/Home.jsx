@@ -4,12 +4,13 @@ import { useTranslation } from "react-i18next";
 import TextField from "../components/shared/TextField";
 import { homeSchema } from "../features/home/schema";
 import { useNavigate, useSearchParams } from "react-router";
+import Error from "./Error";
 
 export default function Home() {
   const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const auth = searchParams.get("Tr");
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -25,6 +26,9 @@ export default function Home() {
     reset();
     navigate("/otp");
   };
+  if (!auth) {
+    return <Error />;
+  }
 
   return (
     <section className="container mx-auto px-4">
