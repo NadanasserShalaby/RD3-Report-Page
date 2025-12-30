@@ -6,6 +6,7 @@ import TextField from "../components/shared/TextField";
 import { homeSchema } from "../features/home/schema";
 import { useNavigate, useSearchParams } from "react-router";
 import Error from "./Error";
+import ConfirmModal from "../components/shared/ConfirmModal";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -94,26 +95,12 @@ export default function Home() {
       </div>
 
       {showConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-30 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 max-w-md w-full shadow-lg">
-            <h3 className="text-lg font-semibold mb-4">{t("home.confirmTitle")}</h3>
-            <p className="text-gray-600 mb-6">{t("home.confirmMessage")}</p>
-            <div className="flex justify-end gap-4">
-              <button
-                onClick={handleCancel}
-                className="px-4 py-2 rounded-md border border-gray-300"
-              >
-                {t("home.cancel")}
-              </button>
-              <button
-                onClick={handleConfirm}
-                className="px-4 py-2 rounded-md bg-[#5a6268] text-white hover:bg-[#6c757d]"
-              >
-                {t("home.confirm")}
-              </button>
-            </div>
-          </div>
-        </div>
+        <ConfirmModal
+          title={t("home.confirmTitle")}
+          message={t("home.confirmMessage")}
+          onConfirm={handleConfirm}
+          onCancel={handleCancel}
+        />
       )}
     </section>
   );
