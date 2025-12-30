@@ -5,7 +5,7 @@
     "nameLabel": "Full Name",
     "namePlaceholder": "Enter your full name",
     "phoneLabel": "Phone Number",
-    "phonePlaceholder": "05xxxxxxxx",
+    "phonePlaceholder": "Enter your Phone Number",
     "submit": "Confirm Request"
   },
   "validation": {

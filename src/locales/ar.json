@@ -5,7 +5,7 @@
     "nameLabel": "الاسم",
     "namePlaceholder": "اكتب الاسم بالكامل",
     "phoneLabel": "رقم الهاتف",
-    "phonePlaceholder": "05xxxxxxxx",
+    "phonePlaceholder": "ادخل رقم الهاتف ",
     "submit": "تأكيد الطلب"
   },
   "validation": {
