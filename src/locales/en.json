@@ -5,7 +5,22 @@
     "nameLabel": "Full Name",
     "namePlaceholder": "Enter your full name",
     "phoneLabel": "Phone Number",
-    "phonePlaceholder": "01xxxxxxxxx",
+    "phonePlaceholder": "05xxxxxxxx",
     "submit": "Confirm Request"
+  },
+  "validation": {
+    "nameRequired": "Name is required",
+    "phoneRequired": "Phone number is required",
+    "phoneInvalid": "Invalid phone number"
+  },
+  "otp": {
+    "title": "Enter OTP CODE",
+    "subtitle": "We have sent a message with your OTP code to",
+    "submit": "SUBMIT",
+    "success": "OTP Verified Successfully!"
+  },
+  "success": {
+    "title": "Success!",
+    "subtitle": "Your OTP has been verified successfully."
   }
 }

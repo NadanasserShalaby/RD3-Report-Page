@@ -5,7 +5,22 @@
     "nameLabel": "الاسم",
     "namePlaceholder": "اكتب الاسم بالكامل",
     "phoneLabel": "رقم الهاتف",
-    "phonePlaceholder": "01xxxxxxxxx",
+    "phonePlaceholder": "05xxxxxxxx",
     "submit": "تأكيد الطلب"
+  },
+  "validation": {
+    "nameRequired": "الاسم مطلوب",
+    "phoneRequired": "رقم الموبايل مطلوب",
+    "phoneInvalid": "رقم الموبايل غير صحيح"
+  },
+  "otp": {
+    "title": "ادخل كود التحقق",
+    "subtitle": "لقد أرسلنا رسالة تحتوي على كود التحقق إلى",
+    "submit": "إرسال",
+    "success": "تم التحقق من الكود بنجاح!"
+  },
+  "success": {
+    "title": "تم بنجاح!",
+    "subtitle": "تم التحقق من الكود بنجاح."
   }
 }

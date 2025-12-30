@@ -21,7 +21,6 @@ function App() {
 
   return (
     <DirectionProvider dir={lang === "ar" ? "rtl" : "ltr"}>
-    {/* <DirectionProvider > */}
       <RouterProvider router={router} />
       <Toaster expand={false} richColors position="bottom-right" />
     </DirectionProvider>

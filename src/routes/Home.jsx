@@ -1,8 +1,33 @@
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
+import TextField from "../components/shared/TextField";
+import { homeSchema } from "../features/home/schema";
+import { useNavigate, useSearchParams } from "react-router";
+
 export default function Home() {
   const { t } = useTranslation();
+  const [searchParams] = useSearchParams();
+  const auth = searchParams.get("Tr");
+    const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(homeSchema),
+    mode: "onChange",
+  });
+
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+    reset();
+    navigate("/otp");
+  };
+
   return (
-    <section className="container mt-10 mx-auto px-4">
+    <section className="container mx-auto px-4">
       <div className="flex justify-center">
         <div className="w-full max-w-2xl border rounded-xl bg-white p-8">
 
@@ -15,41 +40,43 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-5">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-5"
+          >
+            <TextField
+              type="text"
+              label={t("home.nameLabel")}
+              placeholder={t("home.namePlaceholder")}
+              error={
+                errors.name?.message
+                  ? t(errors.name.message)
+                  : undefined
+              }
+              {...register("name")}
+            />
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("home.nameLabel")}
-              </label>
-              <input
-                type="text"
-                placeholder={t("home.namePlaceholder")}
-                className="w-full rounded-md border border-gray-300 px-4 py-2.5
-                  focus:outline-none focus:ring-1 focus:ring-gray-400"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                {t("home.phoneLabel")}
-              </label>
-              <input
-                type="text"
-                placeholder={t("home.phonePlaceholder")}
-                className="w-full rounded-md border border-gray-300 px-4 py-2.5
-                  focus:outline-none focus:ring-1 focus:ring-gray-400"
-              />
-            </div>
+            <TextField
+              label={t("home.phoneLabel")}
+              placeholder={t("home.phonePlaceholder")}
+              error={
+                errors.phone?.message
+                  ? t(errors.phone.message)
+                  : undefined
+              }
+              {...register("phone")}
+              type="number"
+            />
 
             <button
-              type="button"
+              type="submit"
               className="w-full py-3 mt-2 rounded-md text-white font-medium
-                bg-[#6c757d] hover:bg-[#5a6268] transition"
+                hover:bg-[#6c757d] bg-[#5a6268] transition"
             >
               {t("home.submit")}
             </button>
+          </form>
 
-          </div>
         </div>
       </div>
     </section>
